@@ -14,6 +14,6 @@ public class Solution {
         if (text == null) {
             return 0;
         }
-
+        return 0;
     }
 }
