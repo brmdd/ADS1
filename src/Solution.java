@@ -7,13 +7,19 @@ public class Solution {
         char letter = sc.nextLine().charAt(0);
         int result = findLetter(text, letter);
 
-        System.out.println("The letter " + letter + "occurs in " + text + result + "times. ");
+        System.out.println("The letter " + letter + " occurs in string " + text + " " + result + " times. ");
     }
 
     private static int findLetter(String text, char letter) {
-        if (text == null) {
+        if (text.isEmpty()) {
             return 0;
         }
-        return 0;
+
+        int count = (text.charAt(0) == letter) ? 1 : 0;
+
+        if (text.length() > 1) {
+            return count + findLetter(text.substring(1), letter);
+        }
+        else return count;
     }
 }
